@@ -158,7 +158,7 @@ end
 -- 3. CONTEÚDO DAS TELAS LATERAIS, TOPO E DOCK (TELAS 2, 4, 5, 6, 7)
 -- =========================================================================
 -- Tela 6: Terminal Logs
-txt(s6_RightLogs.Frame, "💻 TERMINAL LOGS 5D", UDim2.new(1,-24,0,28), UDim2.new(0,14,0,8), Enum.Font.GothamBlack, currentThemeColor, 15)
+txt(s6_RightLogs.Frame, "TERMINAL LOGS", UDim2.new(1,-24,0,28), UDim2.new(0,14,0,8), Enum.Font.GothamBlack, currentThemeColor, 15)
 local logsContainer = new("Frame", s6_RightLogs.Frame, {Size=UDim2.new(1,-24,1,-44), Position=UDim2.new(0,12,0,38), BackgroundColor3=Color3.fromRGB(4,7,14), BorderSizePixel=0})
 new("UICorner", logsContainer, {CornerRadius=UDim.new(0,8)})
 new("UIListLayout", logsContainer, {Padding=UDim.new(0,4), VerticalAlignment=Enum.VerticalAlignment.Bottom})
@@ -173,11 +173,11 @@ end
 addSystemLog("Hub 5D iniciado (40 Scripts prontos!)", Color3.fromRGB(0,255,160))
 
 -- Tela 2: Topo + 5 Temas
-txt(s2_Top.Frame, "🌌 RECEX // BROOKHAVEN 5D", UDim2.new(0,290,0,36), UDim2.new(0,20,0,12), Enum.Font.GothamBlack, currentThemeColor, 21)
+txt(s2_Top.Frame, " RECEX UNIVERSAL SCRIPT", UDim2.new(0,290,0,36), UDim2.new(0,20,0,12), Enum.Font.GothamBlack, currentThemeColor, 21)
 txt(s2_Top.Frame, "7 TELAS HOLOGRÁFICAS • 40 SCRIPTS DA INTERNET", UDim2.new(0,340,0,20), UDim2.new(0,20,0,48), Enum.Font.Code, Color3.fromRGB(160,190,230), 13)
 local urlBar = new("Frame", s2_Top.Frame, {Size=UDim2.new(0,330,0,36), Position=UDim2.new(0,315,0,20), BackgroundColor3=Color3.fromRGB(14,20,34)})
 new("UICorner", urlBar, {CornerRadius=UDim.new(0,10)})
-txt(urlBar, "🔒 github.com/recex/BrookhavenHub [40]", UDim2.new(1,-16,1,0), UDim2.new(0,10,0,0), Enum.Font.Code, Color3.fromRGB(0,255,170), 13)
+txt(urlBar, "https://discord.gg/MhFrf7z5D", UDim2.new(1,-16,1,0), UDim2.new(0,10,0,0), Enum.Font.Code, Color3.fromRGB(0,255,170), 13)
 
 local themes = {
     {"Ciano", Color3.fromRGB(0,255,255), Color3.fromRGB(170,0,255)},
@@ -212,7 +212,7 @@ txt(s4_LeftProf.Frame, "@"..player.Name, UDim2.new(1,-115,0,20), UDim2.new(0,110
 txt(s4_LeftProf.Frame, "⚡ 40 SCRIPTS DESTRAVADOS", UDim2.new(1,-115,0,20), UDim2.new(0,110,0,68), Enum.Font.GothamBold, Color3.fromRGB(0,255,160), 12)
 
 -- Tela 5: Telemetria + Equalizador de 15 Barras
-txt(s5_RightStat.Frame, "📊 TELEMETRIA & ESPECTRO 5D", UDim2.new(1,-24,0,28), UDim2.new(0,14,0,10), Enum.Font.GothamBlack, currentThemeColor, 15)
+txt(s5_RightStat.Frame, "📊 TELEMETRIA & ESPECTRO ", UDim2.new(1,-24,0,28), UDim2.new(0,14,0,10), Enum.Font.GothamBlack, currentThemeColor, 15)
 local fpsLabel  = txt(s5_RightStat.Frame, "FPS: 60", UDim2.new(0.5,-14,0,24), UDim2.new(0,14,0,42), Enum.Font.Code, Color3.fromRGB(0,255,160), 15)
 local pingLabel = txt(s5_RightStat.Frame, "PING: -- ms", UDim2.new(0.5,-14,0,24), UDim2.new(0.5,0,0,42), Enum.Font.Code, Color3.fromRGB(255,210,60), 15)
 local plrsLabel = txt(s5_RightStat.Frame, "JOGADORES NO SERVIDOR: "..#Players:GetPlayers(), UDim2.new(1,-28,0,22), UDim2.new(0,14,0,68), Enum.Font.GothamBold, Color3.fromRGB(200,220,255), 13)
@@ -233,10 +233,10 @@ local function createDockBtn(text, posS, sizeS, cb)
     new("UIStroke", b, {Color=currentThemeColor, Thickness=1.5})
     b.MouseButton1Click:Connect(function() cb(b) end)
 end
-createDockBtn("➕ APROXIMAR 5D", 0.00, 0.24, function() hubDist = math.max(5.5, hubDist - 0.8) end)
-createDockBtn("➖ AFASTAR 5D",   0.25, 0.24, function() hubDist = math.min(12.5, hubDist + 0.8) end)
-createDockBtn("🌌 INÉRCIA 5D: ON", 0.50, 0.25, function(b) inertiaEnabled = not inertiaEnabled; b.Text = inertiaEnabled and "🌌 INÉRCIA 5D: ON" or "🌌 INÉRCIA 5D: FIXA" end)
-createDockBtn("💥 PULSO TESSERACT", 0.75, 0.25, function() for _, s in pairs(screens5D) do s.PulseZ = 1.15 end end)
+createDockBtn("➕ APROXIMAR", 0.00, 0.24, function() hubDist = math.max(5.5, hubDist - 0.8) end)
+createDockBtn("➖ AFASTAR",   0.25, 0.24, function() hubDist = math.min(12.5, hubDist + 0.8) end)
+createDockBtn("INÉRCIA: ON", 0.50, 0.25, function(b) inertiaEnabled = not inertiaEnabled; b.Text = inertiaEnabled and "INÉRCIA: ON" or "INÉRCIA: FIXA" end)
+createDockBtn("TESSERACT", 0.75, 0.25, function() for _, s in pairs(screens5D) do s.PulseZ = 1.15 end end)
 
 -- =========================================================================
 -- 4. TELA 1 (GRADE CENTRAL DOS 40 SCRIPTS) + TELA 3 (7 ABAS)
